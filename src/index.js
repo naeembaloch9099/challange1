@@ -1,17 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const root = ReactDOM.createRoot(document.getElementById("root"));
+function App() {
+  return (
+    <>
+      <h1>rendring</h1>
+      <Pizza
+        name="Muhammad Naeem"
+        regno="1223"
+        picture="/logo192.png"
+        alt="logo"
+      />
+    </>
+  );
+}
+function Pizza(props) {
+  return (
+    <div>
+      <h2>{props.name}</h2>
+      <p>Reg No: {props.regno}</p>
+      <img src={props.picture} alt="Logo" />
+    </div>
+  );
+}
+root.render(<App />);
